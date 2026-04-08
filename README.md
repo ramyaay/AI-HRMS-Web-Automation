@@ -1,13 +1,13 @@
 # AI HRMS Web Automation
 
-**Project Overview**
+# Project Overview
 
 This project focuses on automating the testing of an AI-based Human Resource Management System (HRMS) web application.
 It is built using Python, Selenium WebDriver, and pytest to ensure the reliability and functionality of core HRMS features such as authentication, employee management, and workflow processes.
 
 The framework follows the Page Object Model (POM) design pattern to improve maintainability, scalability, and reusability of test scripts.
 
-**Tech Stack**
+# Tech Stack
 
 * **Programming Language:** Python
 * **Automation Tool:** Selenium WebDriver
@@ -15,20 +15,20 @@ The framework follows the Page Object Model (POM) design pattern to improve main
 * **Design Pattern:** Page Object Model (POM)
 * **Reporting:** Allure Reports (if configured)
   
-**Project Structure**
+# Project Structure
 
 AI-HRMS-Web-Automation/
 
-1.tests              Test cases for different modules
-2.pages              Page Object classes for UI interactions
-3.utils              Utility/helper functions
-4.config             Configuration files (if available)
-5.requirements.txt    Project dependencies
-6.pytest.ini          Pytest configuration
-7.reports            Test execution reports
-8.allure-report      Allure generated reports
+├── tests/              # Test cases for different modules
+├── pages/              # Page Object classes for UI interactions
+├── utils/              # Utility/helper functions
+├── config/             # Configuration files (if available)
+├── requirements.txt    # Project dependencies
+├── pytest.ini          # Pytest configuration
+├── reports/            # Test execution reports
+└── allure-report/      # Allure generated reports
 
-**Key Features**
+# Key Features
 
 * Automated UI testing for HRMS web application
 * Implementation of Page Object Model for better code structure
@@ -36,32 +36,33 @@ AI-HRMS-Web-Automation/
 * Pytest-based test execution and assertions
 * Support for generating detailed test reports
 
-**How to Execute Tests**
+# How to Execute Tests
 
-**1. Install Dependencies**
+1. Install Dependencies
 
 pip install -r requirements.txt
 
-**2. Run Test Cases**
+2. Run Test Cases
 
 pytest
 
-**3. Generate Allure Report (Optional)**
+3. Generate Allure Report (Optional)
 
 pytest --alluredir=reports
 allure serve reports
 
-**Reporting**
+# Reporting
 
 The framework supports test reporting using Allure.
 After execution, reports can be viewed to analyze test results, failures, and execution details.
 
-**Future Enhancements**
+# Future Enhancements
 
 * Integration with CI/CD tools (e.g., Jenkins)
 * Cross-browser execution support
 * Parallel test execution
 * Enhanced logging and reporting
 
-**Author**
-Ramya
+# Author
+
+**Ramya**
