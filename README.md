@@ -19,14 +19,14 @@ The framework follows the Page Object Model (POM) design pattern to improve main
 
 AI-HRMS-Web-Automation/
 
-├── tests/              # Test cases for different modules
-├── pages/              # Page Object classes for UI interactions
-├── utils/              # Utility/helper functions
-├── config/             # Configuration files (if available)
-├── requirements.txt    # Project dependencies
-├── pytest.ini          # Pytest configuration
-├── reports/            # Test execution reports
-└── allure-report/      # Allure generated reports
+1.tests              Test cases for different modules
+2.pages              Page Object classes for UI interactions
+3.utils              Utility/helper functions
+4.config             Configuration files (if available)
+5.requirements.txt    Project dependencies
+6.pytest.ini          Pytest configuration
+7.reports            Test execution reports
+8.allure-report      Allure generated reports
 
 **Key Features**
 
