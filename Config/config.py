@@ -31,4 +31,10 @@ class TestData:
     SEARCH_NAME="ABINASH PATRI"
     TL_LOGIN_EMAIL="ramya.ay@dollarbirdtech.com"
     TL_LOGIN_PASSWORD="Preethu@123"
-
+    JOB_NAME="Frontend Developer"
+    JOB_LOC="MYSORE"
+    JOB_EXP="Fresher"
+    JOB_VAC="2"
+    JOB_SKILLS="HTML5, CSS3, JavaScript, Web Design, Git & GitHub"
+    JOB_SUMMARY="Motivated Frontend Developer with basic knowledge of web technologies like HTML, CSS, and JavaScript. Eager to build responsive and user-friendly web applications and learn modern frameworks."
+    JOB_RESPONSIBILITY="Develop and maintain user-facing web pages \n Ensure responsive and cross-browser compatibility \n Collaborate with designers and backend developers"
