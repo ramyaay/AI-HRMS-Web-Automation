@@ -17,13 +17,13 @@ class Test_Home(BaseTest):
         header=self.HomePage.get_header_value()
         assert header==TestData.HOME_PAGE_HEADER
 
-    # def test_HomePage_Navigation(self):
-    #     self.HomePage = HomePage(self.driver)
-    #     self.HomePage.navigate_to_all_elements()
+    def test_HomePage_Navigation(self):
+        self.HomePage = HomePage(self.driver)
+        self.HomePage.navigate_to_all_elements()
 
-    # def test_ProfileUpdate(self):
-    #     self.HomePage=HomePage(self.driver)
-    #     self.HomePage.profile_update(TestData.ADMIN_PHONE_NO)
+    def test_ProfileUpdate(self):
+        self.HomePage=HomePage(self.driver)
+        self.HomePage.profile_update(TestData.ADMIN_PHONE_NO)
 
     def test_domain_creation(self):
         self.HomePage=HomePage(self.driver)
@@ -55,6 +55,6 @@ class Test_Home(BaseTest):
         self.HomePage=HomePage(self.driver)
         self.HomePage.edit_domain()
 
-    # def test_domain_view__edit_cancel(self):
-    #     self.HomePage=HomePage(self.driver)
-    #     self.HomePage.domain_view_edit_cancel()
+    def test_domain_view_edit_cancel(self):
+        self.HomePage=HomePage(self.driver)
+        self.HomePage.domain_view_edit_cancel()
