@@ -26,10 +26,6 @@ class LoginPage(BasePage):
     def get_login_page_title(self,title):
         return self.get_title(title)
 
-    """This is used to check signup link"""
-    # def is_signup_link_exist(self):
-    #     return self.is_visible(self.SIGNUP_LINK)
-
     """This is used to login to app"""
     def do_login(self,username,password):
         self.do_send_keys(self.EMAIL,username)
@@ -41,15 +37,17 @@ class LoginPage(BasePage):
         print(text)
         return HomePage(self.driver)
 
+    """This is used to logout to app"""
     def do_logout(self):
         time.sleep(5)
         self.do_click(self.PROFILE)
         self.do_click(self.LOGOUT_BUTTON)
 
+    """This is used to login without entering credentials"""
     def default_login(self):
         self.do_click(self.LOGIN_BUTTON)
-        # self.alert_text()
 
+    """This is used to login by entering invalid email"""
     def do_invalid_email(self,username, password):
         self.do_send_keys(self.EMAIL,username)
         time.sleep(2)
@@ -59,6 +57,7 @@ class LoginPage(BasePage):
         text=self.get_element_text(self.INVALID_EMAIL_MSG)
         print(text)
 
+    """This is used to login by entering invalid password"""
     def do_invalid_password(self,username, password):
         Email = self.driver.find_element(*self.EMAIL)
         Email.clear()

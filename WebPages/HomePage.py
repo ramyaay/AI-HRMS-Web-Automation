@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 from WebPages.BasePage import BasePage
 
 class HomePage(BasePage):
+    """By Locater -OR"""
     HEADER=(By.XPATH, "//h2[normalize-space()='Welcome Amaresh Patil!']")
     PROFILE=(By.CSS_SELECTOR, "button[title='Profile'] div")
     NOTIFICATION_SYMBOL=(By.XPATH, "//a[@id='bell-icon-btn']//*[name()='svg']")
@@ -36,16 +37,21 @@ class HomePage(BasePage):
     DOM_EDIT_REMOVE_PAGE=(By.XPATH, "/html[1]/body[1]/div[2]/div[6]/div[1]/div[1]/div[1]/button[1]")
     SUCCESS_MSG = (By.XPATH, "//div[@class='snackbar success']")
 
+    """Constructor of the page class"""
     def __init__(self,driver):
         super().__init__(driver)
 
+    """Page Actions"""
+    """This is used to get the page title"""
     def get_home_page_title(self, title):
         return self.get_title(title)
 
+    """This is used to get the header value"""
     def get_header_value(self):
         if self.is_visible(self.HEADER):
             return self.get_element_text(self.HEADER)
 
+    """This is used to navigate to the all pages"""
     def navigate_to_all_elements(self):
         self.do_click(self.PROFILE)
         time.sleep(2)
@@ -67,6 +73,7 @@ class HomePage(BasePage):
         time.sleep(2)
         self.driver.back()
 
+    """This is used to update the profile"""
     def profile_update(self,phn_no):
         self.do_click(self.PROFILE)
         time.sleep(1)
@@ -81,6 +88,7 @@ class HomePage(BasePage):
         text = self.get_element_text(self.SUCCESS_MSG)
         print(text)
 
+    """This is used to create the domain"""
     def domain_creation(self, domain_name):
         self.do_click(self.SETTINGS_BTN)
         time.sleep(1)
@@ -97,7 +105,7 @@ class HomePage(BasePage):
         text = self.get_element_text(self.SUCCESS_MSG)
         print(text)
 
-
+    """This is used to cancel the domain deletion"""
     def domain_deletion_cancel(self):
         self.do_click(self.SEL_DOMAIN_DEL)
         time.sleep(2)
@@ -106,6 +114,7 @@ class HomePage(BasePage):
         self.do_click(self.CANCEL_DOMAIN_DEL)
         time.sleep(1)
 
+    """This is used to delete the domain"""
     def domain_deletion(self):
         self.do_click(self.DOMAIN_DEL_BTN)
         time.sleep(1)
@@ -114,12 +123,14 @@ class HomePage(BasePage):
         text = self.get_element_text(self.SUCCESS_MSG)
         print(text)
 
+    """This is used to verify the default domain creation"""
     def default_domain_creation(self):
         self.do_click(self.CREATE_DOMAIN_BTN)
         time.sleep(1)
         self.do_click(self.DOMAIN_SUBMIT)
         time.sleep(1)
 
+    """This is used to inactive the domain"""
     def inactive_domain_creation(self,domain_name):
         self.do_click(self.REMOVE_DOM_PAGE_BTN)
         time.sleep(1)
@@ -132,6 +143,7 @@ class HomePage(BasePage):
         text = self.get_element_text(self.SUCCESS_MSG)
         print(text)
 
+    """This is used to verify the domain creation which is already created"""
     def create_existing_domain(self,domain_name):
         self.do_click(self.CREATE_DOMAIN_BTN)
         time.sleep(1)
@@ -145,6 +157,7 @@ class HomePage(BasePage):
         self.do_click(self.REMOVE_DOM_PAGE_BTN)
         time.sleep(1)
 
+    """This is used to edit the domain status"""
     def edit_domain(self):
         self.do_click(self.DOM_3_DOTS_CLICK)
         time.sleep(1)
@@ -159,6 +172,7 @@ class HomePage(BasePage):
         text = self.get_element_text(self.SUCCESS_MSG)
         print(text)
 
+    """This is used to view the domain"""
     def domain_view_edit_cancel(self):
         self.do_click(self.DOM_3_DOTS_CLICK)
         time.sleep(1)

@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 from WebPages.BasePage import BasePage
 
 class CMSPage(BasePage):
+    """By Locater -OR"""
     SETTINGS_BTN = (By.XPATH, "//span[normalize-space()='Settings']")
     CMS_FORM_BTN = (By.XPATH, "//a[normalize-space()='CMS Form']")
     CREATE_CMS_BTN = (By.ID, "createFieldBtn")
@@ -20,6 +21,11 @@ class CMSPage(BasePage):
     DELETE_BTN = (By.ID, "deleteFieldBtn")
     CON_DELETE = (By.ID, "confirmDeleteBtn")
 
+    """Constructor of the page class"""
+    def __init__(self, driver):
+        super().__init__(driver)
+
+    """This is used to create the CMS field"""
     def CMS_Creation(self, field_name):
         self.do_click(self.SETTINGS_BTN)
         time.sleep(1)
@@ -44,12 +50,14 @@ class CMSPage(BasePage):
         self.do_click(self.SAVE_FIELD)
         time.sleep(2)
 
+    """This is used to preview the CMS Page"""
     def CMS_Preview(self):
         self.do_click(self.PREVIEW_BTN)
         time.sleep(1)
         self.do_click(self.CLOSE_PREVIEW_PAGE)
         time.sleep(2)
 
+    """This is used to delete the CMS field"""
     def CMS_Delete(self):
         self.do_click(self.CHECK_BOX_BTN)
         time.sleep(1)

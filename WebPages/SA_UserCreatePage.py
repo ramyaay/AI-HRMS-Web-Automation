@@ -6,6 +6,7 @@ from WebPages.BasePage import BasePage
 from WebPages.HomePage import HomePage
 
 class SA_UserCreatePage(BasePage):
+    """By Locater -OR"""
     CREATE_USER_BTN=(By.XPATH, "//button[normalize-space()='Create User']")
     MANAGE_USERS_BTN=(By.CSS_SELECTOR, "body > div:nth-child(3) > div:nth-child(2) > nav:nth-child(1) > a:nth-child(2)")
     NAME_FIELD=(By.ID, "first-name1")
@@ -38,9 +39,11 @@ class SA_UserCreatePage(BasePage):
     ROLES_BTN=(By.ID, "selected-role")
     ROLES_OPTIONS=(By.CLASS_NAME, "dropdown-option")
 
+    """Constructor of the page class"""
     def __init__(self,driver):
         super().__init__(driver)
 
+    """This is used to create the user by entering all the required data"""
     def create_user_hr(self, user_name, emp_id, phn_no, email, password):
         self.do_click(self.MANAGE_USERS_BTN)
         time.sleep(1)
@@ -63,6 +66,7 @@ class SA_UserCreatePage(BasePage):
         self.do_click(self.CREATE_USER)
         time.sleep(4)
 
+    """This is used to verify that without entering any data create the user"""
     def create_blank_user(self):
         self.do_click(self.CREATE_USER_BTN)
         time.sleep(1)
@@ -80,6 +84,7 @@ class SA_UserCreatePage(BasePage):
         print(text_password)
         time.sleep(2)
 
+    """This is used to verify the error message for the missing field"""
     def leave_one_field_and_create(self, user_name, emp_id, phn_no, email, password):
         self.do_send_keys(self.NAME_FIELD, user_name)
         time.sleep(1)
@@ -98,6 +103,7 @@ class SA_UserCreatePage(BasePage):
         self.do_click(self.CLOSE_PAGE)
         time.sleep(2)
 
+    """This is used to edit data of the created user"""
     def Edit_User(self, phnNo):
         self.do_click(self.CLICK_3_DOTS)
         time.sleep(1)
@@ -110,6 +116,7 @@ class SA_UserCreatePage(BasePage):
         self.do_click(self.UPDATE)
         time.sleep(2)
 
+    """This is used to Delete the created user"""
     def Delete_User(self):
         self.do_click(self.CHECK_BOX)
         time.sleep(1)
@@ -118,6 +125,7 @@ class SA_UserCreatePage(BasePage):
         self.do_click(self.USER_CON_DELETE_BTN)
         time.sleep(1)
 
+    """This is used to apply the filters"""
     def Filter_Section(self):
         self.select_dropdown_value(self.ROLES_BTN, self.ROLES_OPTIONS, "HR")
 

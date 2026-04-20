@@ -52,8 +52,5 @@ class Test_UserCreate(BaseTest):
         self.SA_UserCreatePage = SA_UserCreatePage(self.driver)
         self.SA_UserCreatePage.Filter_Section()
 
-    def test_CMS_Section(self):
-        self.SA_UserCreatePage = SA_UserCreatePage(self.driver)
-        self.SA_UserCreatePage.CMS_Section(TestData.FIELD_NAME)
 
 

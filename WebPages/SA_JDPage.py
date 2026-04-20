@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 from WebPages.BasePage import BasePage
 
 class JDPage(BasePage):
+    """By Locater -OR"""
     JD_BTN=(By.XPATH, "/html[1]/body[1]/div[3]/div[2]/nav[1]/a[3]")
     JD_CREATE_BTN=(By.XPATH, "/html[1]/body[1]/div[2]/div[3]/div[1]/div[1]/button[2]")
     JD_AI_MODE_OFF=(By.ID, "jdModeToggle")
@@ -40,9 +41,11 @@ class JDPage(BasePage):
     DELETE_PUBLISH_BTN=(By.XPATH, "/html[1]/body[1]/div[2]/div[3]/div[2]/div[2]/div[1]/table[1]/tbody[1]/tr[5]/td[6]/div[1]/ul[1]/li[4]/button[1]")
     JD_CLOSE_BTN=(By.XPATH, "/html[1]/body[1]/div[2]/div[4]/div[1]/div[1]/div[1]/button[1]")
 
+    """Constructor of the page class"""
     def __init__(self,driver):
         super().__init__(driver)
 
+    """This is used to create the JD manually"""
     def create_JD_Manually(self, job_name, location, experience, vacancies, skills, summary, responsibilities):
         self.do_click(self.JD_BTN)
         time.sleep(1)
@@ -74,6 +77,7 @@ class JDPage(BasePage):
         time.sleep(1)
         self.do_click(self.JD_SAVE_BTN)
 
+    """This is used to verify the Default JD creation"""
     def default_JD_Creation(self):
         self.do_click(self.JD_CREATE_BTN)
         time.sleep(1)
@@ -97,9 +101,10 @@ class JDPage(BasePage):
         print(text_skills)
         text_summary=self.get_element_text(self.JOB_SUMMARY_REQ_MSG)
         print(text_summary)
-        text_resposibilities= self.get_element_text(self.JOB_RESPONSIBILITIES_REQ_MSG)
-        print(text_resposibilities)
+        text_responsibilities= self.get_element_text(self.JOB_RESPONSIBILITIES_REQ_MSG)
+        print(text_responsibilities)
 
+    """This is used to verify the JD creation by leaving the one field"""
     def leave_one_field_create_jd(self,job_name, location, experience, vacancies, skills, summary):
         self.do_send_keys(self.JOB_TITLE, job_name)
         time.sleep(1)
@@ -128,6 +133,7 @@ class JDPage(BasePage):
         self.do_click(self.JD_CLOSE_BTN)
         time.sleep(1)
 
+    """This is used to Edit the JD"""
     def edit_jd(self):
         self.do_click(self.JD_3_DOTS)
         time.sleep(1)
@@ -142,6 +148,7 @@ class JDPage(BasePage):
         self.do_click(self.SAVE_EDIT_JD)
         time.sleep(1)
 
+    """This is used to publish the JD and delete the published JD"""
     def publish_delete_publish_jd(self):
         self.do_click(self.JD_3_DOTS)
         time.sleep(1)
@@ -152,6 +159,7 @@ class JDPage(BasePage):
         self.do_click(self.DELETE_PUBLISH_BTN)
         time.sleep(1)
 
+    """This is used to delete the JD"""
     def delete_jd(self):
         self.do_click(self.SEL_JD_CB)
         time.sleep(1)

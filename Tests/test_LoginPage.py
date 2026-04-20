@@ -5,10 +5,6 @@ from WebPages.LoginPage import LoginPage
 from Tests.test_base import BaseTest
 
 class Test_Login(BaseTest):
-    # def test_signup_link_visible(self):
-    #     self.login_page = LoginPage(self.driver)
-    #     flag=self.login_page.is_signup_link_exist()
-    #     assert flag
 
     def test_login_page_title(self):
         self.LoginPage=LoginPage(self.driver)
